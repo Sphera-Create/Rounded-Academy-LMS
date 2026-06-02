@@ -40,6 +40,21 @@ export const placeholderCourses = [
   },
 ]
 
+export const placeholderUpcomingCourses = [
+  {
+    title: "Video Editing for Social Media",
+    description: "Learn to create engaging short-form and long-form video content optimized for social media platforms.",
+    status: "coming_soon" as const,
+    estimatedLaunch: "Q3 2026",
+  },
+  {
+    title: "Graphics Design for Social Media",
+    description: "Master visual storytelling with design principles tailored for social media content creation.",
+    status: "coming_soon" as const,
+    estimatedLaunch: "Q4 2026",
+  },
+]
+
 export const placeholderLiveClasses = [
   {
     id: "1",

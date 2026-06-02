@@ -5,7 +5,7 @@ import { ArrowRight, ArrowUpRight, BookOpen, Users, Star, ChevronRight, Briefcas
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ThemeToggle } from "@/components/shared/ThemeToggle"
-import { Footer } from "@/components/shared/Footer"
+import { placeholderUpcomingCourses } from "@/constants"
 
 const outcomes = [
   {
@@ -272,6 +272,44 @@ export default function MarketingPage() {
         </div>
       </section>
 
+      {/* Upcoming Courses */}
+      <section className="bg-white px-6 py-24 dark:bg-[#0d000f] lg:px-16 lg:py-32">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-brand-dark dark:text-white sm:text-4xl">
+              Upcoming Courses
+            </h2>
+            <p className="mx-auto max-w-xl text-base text-brand-dark/60 dark:text-white/60">
+              New programs currently in development. Be the first to know when they launch.
+            </p>
+          </div>
+          <div className="mx-auto grid max-w-2xl gap-8">
+            {placeholderUpcomingCourses.map((course) => (
+              <Card
+                key={course.title}
+                className="relative border-0 bg-brand-dark/[0.04] p-8 shadow-sm ring-1 ring-brand-dark/10 transition-all dark:bg-white/5 dark:ring-white/10"
+              >
+                <CardHeader className="p-0 pb-4">
+                  <div className="mb-3">
+                    <span className="inline-flex items-center rounded-full border border-brand-gold/30 px-3 py-1 text-xs font-medium text-brand-dark/50 dark:border-brand-gold/20 dark:text-brand-gold/60">
+                      Coming Soon — {course.estimatedLaunch}
+                    </span>
+                  </div>
+                  <CardTitle className="text-lg font-semibold text-brand-dark dark:text-white">
+                    {course.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <p className="text-sm leading-relaxed text-brand-dark/60 dark:text-white/60">
+                    {course.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Success Stories Preview */}
       <section className="bg-white px-6 py-24 dark:bg-[#150018] lg:px-16 lg:py-32">
         <div className="mx-auto max-w-6xl">
@@ -363,8 +401,6 @@ export default function MarketingPage() {
           </Link>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }
